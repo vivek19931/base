@@ -252,7 +252,24 @@ document.querySelector('#submit-btn').addEventListener('click', function(e) {
 	  document.querySelector('input[name="space"]').value = '';
 	 
   })
+})
+
+
+document.querySelector('#send-location').addEventListener('click', function(e) {
+  if (!navigator.geolocation) {
+    return alert('Geolocation is not supported by your browser.')
+  }
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+    socket.emit('createLocationMessage', {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    })
+  }, function() {
+    alert('Unable to fetch location.')
+  })
 });
+
 
 
 
