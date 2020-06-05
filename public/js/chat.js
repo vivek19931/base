@@ -146,6 +146,32 @@ socket.on('newMessage', function(message) {
 
 
 
+socket.on('myMessage', function(message) {
+	b=message.from;
+	    if(block.indexOf(b) > -1) {
+    console.log('error');
+         
+      }
+	else{
+  const formattedTime = moment(message.createdAt).format('LT');
+  const template = document.querySelector('#message-template').innerHTML;
+  const html = Mustache.render(template, {
+    
+    from: "you",
+    text: message.text,
+	  image:message.image,
+	  links:message.links,
+	  
+    createdAt: formattedTime
+  });
+
+  const div = document.createElement('div');
+  div.innerHTML = html
+
+  document.querySelector('#messages').appendChild(div);
+  scrollToBottom();
+}
+});
 
 
 
