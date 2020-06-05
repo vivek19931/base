@@ -198,11 +198,7 @@ socket.on('newMessage', function(message) {
 
 
 socket.on('whisper', function(message) {
-	l=message.msg;
-	if(l===paramsname)
-	{console.log('error');
-	}
-	else{
+	
 	
 		
   const formattedTime = moment(message.createdAt).format('LT');
