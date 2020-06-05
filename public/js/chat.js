@@ -240,7 +240,7 @@ socket.on('whisper', function(message) {
 
   document.querySelector('#messages').appendChild(div);
   scrollToBottom();
-	}
+	
 });
 
 
