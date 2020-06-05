@@ -111,6 +111,7 @@ io.on('connection', (socket) => {
 
    else{
         io.to(user.room).emit('newMessage', generateMessage(user.name, message.text,message.image,message.links));
+	       socket.emit('myMessage', generateMessage(user.name, message.text,message.image,message.links));
     
     
   }
