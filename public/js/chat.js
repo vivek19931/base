@@ -1,5 +1,6 @@
 
 let socket = io();
+let paramsname;
 
 function scrollToBottom() {
   let messages = document.querySelector('#messages').lastElementChild;
@@ -197,6 +198,11 @@ socket.on('newMessage', function(message) {
 
 
 socket.on('whisper', function(message) {
+	l=message.msg;
+	if(l=paramsname)
+	{console.log('error');
+	}
+	else{
 	
 		
   const formattedTime = moment(message.createdAt).format('LT');
@@ -212,6 +218,7 @@ socket.on('whisper', function(message) {
 
   document.querySelector('#messages').appendChild(div);
   scrollToBottom();
+	}
 });
 
 
