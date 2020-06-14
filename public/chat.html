@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body class="chat">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.19/ua-parser.min.js"></script>
+
+<script>
+	var ua = new UAParser();
+	var result = ua.getResult();
+	console.log(result);
+
+
+	console.log(result.browser);
+	console.log(result.device);
+	console.log(result.os);
+		
+
+
+</script>
 
     <div class="chat__sidebar">
       <h3>People</h3>
